@@ -5,26 +5,44 @@ Backend Web API .NET Core para um microserviço de usuários contendo login, cad
 As API's podem ser chamadas utilizando o Postman das seguintes formas
 
 **Criar usuario**
-- PUT {{url}}/api/acesso/usuario
+
+PUT {{url}}/api/acesso/usuario
+
 **Alterar usuario**
-- POST {{url}}/api/acesso/usuario
+
+POST {{url}}/api/acesso/usuario
+
 **Trocar senha**
-- POST {{url}}/api/acesso
+
+POST {{url}}/api/acesso
+
 **Remover usuario**
-- DELETE {{url}}/api/acesso/usuario
+
+DELETE {{url}}/api/acesso/usuario
+
 **Obter usuarios**
-- GET {{url}}/api/acesso/usuario
+
+GET {{url}}/api/acesso/usuario
+
 **Login**
-- POST {{url}}/api/acesso/usuario
+
+POST {{url}}/api/acesso/usuario
 
 ### Authorization
 A autorização de acesso foi construída utilizado o JWT (JSON Web Token), essa validação consiste na geração de um Token que contém informações de acesso e previne o acesso a rotas não autorizadas.
+
 Para isso são utilizados 3 **Roles** de acesso, *1 - Diretor*, *2 - Gerente* e *3 - Colaborador*.
+
 A informação do *Role* do usuário é armazenada e informada pelo campo *type* no JSON Usuario
+
 Os métodos **Criar usuario**, **Trocar senha** e **Login** estão registrados em rota anônima, não havendo necessidade de geração de token.
+
 O método **Obter usuarios** permite acesso pelos roles 1 - Diretor, 2 - Gerente e 3 - Colaborador.
+
 O método **Alterar usuario** permite acesso pelos roles 1 - Diretor, 2 - Gerente.
+
 O método **Remover usuario** permite acesso pelo role 1 - Diretor.
+
 Para os métodos que requerem autorização é necessário incluir como *Bearer Token* o Token retornado fazer login
 
 ### JSON - Usuário
