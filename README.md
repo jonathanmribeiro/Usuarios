@@ -4,27 +4,27 @@ Backend Web API .NET Core para um microserviço de usuários contendo login, cad
 # API
 As API's podem ser chamadas utilizando o Postman das seguintes formas
 
-# **Criar usuario**
+### **Criar usuario**
 
 PUT {{url}}/api/acesso/usuario
 
-# **Alterar usuario**
+### **Alterar usuario**
 
 POST {{url}}/api/acesso/usuario
 
-# **Trocar senha**
+### **Trocar senha**
 
 POST {{url}}/api/acesso
 
-# **Remover usuario**
+### **Remover usuario**
 
 DELETE {{url}}/api/acesso/usuario
 
-# **Obter usuarios**
+### **Obter usuarios**
 
 GET {{url}}/api/acesso/usuario
 
-# **Login**
+### **Login**
 
 POST {{url}}/api/acesso/usuario
 
