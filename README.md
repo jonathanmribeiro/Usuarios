@@ -37,7 +37,7 @@ O método **Alterar usuario** permite acesso pelos roles 1 - Diretor, 2 - Gerent
 
 O método **Remover usuario** permite acesso pelo role 1 - Diretor.
 
-Para os métodos que requerem autorização é necessário incluir como *Bearer Token* o Token retornado fazer login
+Para os métodos que requerem autorização é necessário incluir como *Bearer Token* o Token retornado ao fazer login
 
 # JSON - Usuário
 Para criação do usuário em banco e manipulação, o seguinte JSON pode ser utilizado
