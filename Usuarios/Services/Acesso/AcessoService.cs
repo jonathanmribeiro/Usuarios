@@ -18,11 +18,6 @@ namespace Usuarios.Services
         {
         }
 
-        public void InserirAcesso()
-        {
-            throw new NotImplementedException();
-        }
-
         public string Login(User _usuario)
         {
             User usuario = _dbService.ObterUsuarioPorNome(_usuario.Name);
@@ -102,14 +97,14 @@ namespace Usuarios.Services
             }
         }
 
-        public void RemoverUsuario(User _usuario)
+        public bool RemoverUsuario(User _usuario)
         {
             try
             {
                 if (_usuario.Id == 0) throw new Exception("Id do usuário não informado.");
                 if (_dbService.ObterUsuarioPorId(_usuario.Id) == null) throw new Exception("Não encontrado usuário com o ID informado.");
 
-                _dbService.RemoverUsuario(_usuario);
+                return _dbService.RemoverUsuario(_usuario);
             }
             catch (Exception ex)
             {

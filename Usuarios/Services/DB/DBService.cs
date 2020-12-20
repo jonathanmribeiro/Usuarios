@@ -43,7 +43,7 @@ namespace Usuarios.Services
             try
             {
                 PrepararConexao();
-                string sql = $"select id, name, password, email, type from dbo.Usuarios";
+                string sql = $"select id, name, password, email, type from dbo.Usuarios where name not like '%teste%'";
                 SqlCommand command = new SqlCommand(sql, _connection);
                 SqlDataReader reader = command.ExecuteReader();
                 List<User> Usuarios = new List<User>();
@@ -53,8 +53,8 @@ namespace Usuarios.Services
                     {
                         Usuarios.Add(new User() { Id = reader.GetInt32(0), Name = reader.GetString(1), Password = reader.GetString(2), Email = reader.GetString(3), Type = reader.GetInt32(4) });
                     }
-                    reader.Close();
                 }
+                reader.Close();
 
                 return Usuarios;
             }
@@ -80,6 +80,7 @@ namespace Usuarios.Services
                         usuario = new User() { Name = reader.GetString(0), Password = reader.GetString(1), Email = reader.GetString(2), Type = reader.GetInt32(3) };
                     }
                 }
+                reader.Close();
                 return usuario;
             }
             catch (Exception ex)
@@ -103,8 +104,8 @@ namespace Usuarios.Services
                     {
                         usuario = new User() { Id = reader.GetInt32(0), Name = reader.GetString(1), Password = reader.GetString(2), Email = reader.GetString(3), Type = reader.GetInt32(4) };
                     }
-                    reader.Close();
                 }
+                reader.Close();
                 return usuario;
             }
             catch (Exception ex)
@@ -132,9 +133,8 @@ namespace Usuarios.Services
                         usuario = new User() { Id = reader.GetInt32(0), Name = reader.GetString(1), Password = reader.GetString(2), Email = reader.GetString(3), Type = reader.GetInt32(4) };
                     }
 
-                    reader.Close();
                 }
-
+                reader.Close();
                 return usuario;
             }
             catch (Exception ex)
@@ -160,9 +160,8 @@ namespace Usuarios.Services
                         usuario = new User() { Id = reader.GetInt32(0), Name = reader.GetString(1), Password = reader.GetString(2), Email = reader.GetString(3), Type = reader.GetInt32(4) };
                     }
 
-                    reader.Close();
                 }
-
+                reader.Close();
                 return usuario;
             }
             catch (Exception ex)
@@ -204,10 +203,8 @@ namespace Usuarios.Services
                     {
                         usuario = new User() { Id = reader.GetInt32(0), Name = reader.GetString(1), Password = reader.GetString(2), Email = reader.GetString(3), Type = reader.GetInt32(4) };
                     }
-
-                    reader.Close();
                 }
-
+                reader.Close();
                 return usuario;
             }
             catch (Exception ex)

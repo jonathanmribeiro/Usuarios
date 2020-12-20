@@ -53,8 +53,8 @@ C:\Projetos\Usuarios\Usuarios\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Js
 C:\Projetos\Usuarios\Usuarios\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
 C:\Projetos\Usuarios\Usuarios\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 C:\Projetos\Usuarios\Usuarios\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
-C:\Projetos\Usuarios\Usuarios\obj\Debug\netcoreapp3.1\Usuarios.csprojAssemblyReference.cache
 C:\Projetos\Usuarios\Usuarios\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Projetos\Usuarios\Usuarios\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 C:\Projetos\Usuarios\Usuarios\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Projetos\Usuarios\Usuarios\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Projetos\Usuarios\Usuarios\obj\Debug\netcoreapp3.1\Usuarios.csprojAssemblyReference.cache

@@ -12,7 +12,6 @@ namespace web_api_testes
     public class DBTestes
     {
         DBService _service;
-        User _usuarioCriado;
 
         public DBTestes()
         {
@@ -33,11 +32,11 @@ namespace web_api_testes
         public void CriarUsuario_WhenCalled_ReturnsUser()
         {
             //Arrange
-            User usuario = new User { Name = "Usuário de teste", Password = "12345", Email = "usuariodeteste@outlook.com", Type = 1 };
+            User usuario = new User { Name = "TESTE - CRIAÇÃO", Password = "12345", Email = "usuariodeteste@outlook.com", Type = 1 };
 
             //Act
             User okResult = _service.CriarUsuario(usuario);
-            _usuarioCriado = okResult;
+            _service.RemoverUsuario(okResult);
 
             //Assert
             Assert.IsType<User>(okResult);
@@ -46,8 +45,13 @@ namespace web_api_testes
         [Fact]
         public void ObterUsuarioPorNome_WhenCalled_ReturnsUser()
         {
+            //Arrange
+            User usuario = new User { Name = "TESTE - OBTER POR NOME", Password = "12345", Email = "usuariodeteste@outlook.com", Type = 1 };
+            usuario = _service.CriarUsuario(usuario);
+
             //Act
-            User okResult = _service.ObterUsuarioPorNome("Usuário de teste");
+            User okResult = _service.ObterUsuarioPorNome(usuario.Name);
+            _service.RemoverUsuario(usuario);
 
             //Assert
             Assert.IsType<User>(okResult);
@@ -56,8 +60,13 @@ namespace web_api_testes
         [Fact]
         public void ObterUsuarioPorId_WhenCalled_ReturnsUser()
         {
+            //Arrange
+            User usuario = new User { Name = "TESTE - OBTER POR ID", Password = "12345", Email = "usuariodeteste@outlook.com", Type = 1 };
+            usuario = _service.CriarUsuario(usuario);
+
             //Act
-            User okResult = _service.ObterUsuarioPorId(_usuarioCriado.Id);
+            User okResult = _service.ObterUsuarioPorId(usuario.Id);
+            _service.RemoverUsuario(usuario);
 
             //Assert
             Assert.IsType<User>(okResult);
@@ -67,9 +76,13 @@ namespace web_api_testes
         public void AlterarUsuario_WhenCalled_ReturnsUser()
         {
             //Arrange
-            _usuarioCriado.Name = "Usuário teste alterado";
+            User usuario = new User { Name = "TESTE - ALTERAR", Password = "12345", Email = "usuariodeteste@outlook.com", Type = 1 };
+            usuario = _service.CriarUsuario(usuario);
+            usuario.Name = "Nome de usuario de teste alterado";
+
             //Act
-            User okResult = _service.AlterarUsuario(_usuarioCriado);
+            User okResult = _service.AlterarUsuario(usuario);
+            _service.RemoverUsuario(usuario);
 
             //Assert
             Assert.IsType<User>(okResult);
@@ -79,11 +92,14 @@ namespace web_api_testes
         public void TrocarSenha_WhenCalled_ReturnsUser()
         {
             //Arrange
-            _usuarioCriado.OldPassword = _usuarioCriado.Password;
-            _usuarioCriado.Password = "12345";
+            User usuario = new User { Name = "TESTE - TROCAR SENHA", Password = "12345", Email = "usuariodeteste@outlook.com", Type = 1 };
+            usuario = _service.CriarUsuario(usuario);
+            usuario.OldPassword = usuario.Password;
+            usuario.Password = "123456789";
 
             //Act
-            User okResult = _service.TrocarSenha(_usuarioCriado);
+            User okResult = _service.TrocarSenha(usuario);
+            _service.RemoverUsuario(usuario);
 
             //Assert
             Assert.IsType<User>(okResult);
@@ -92,8 +108,12 @@ namespace web_api_testes
         [Fact]
         public void RemoverUsuario_WhenCalled_ReturnsBool()
         {
+            //Arrange
+            User usuario = new User { Name = "TESTE - REMOÇÃO", Password = "12345", Email = "usuariodeteste@outlook.com", Type = 1 };
+            usuario = _service.CriarUsuario(usuario);
+
             //Act
-            bool okResult = _service.RemoverUsuario(_usuarioCriado);
+            bool okResult = _service.RemoverUsuario(usuario);
 
             //Assert
             Assert.IsType<bool>(okResult);

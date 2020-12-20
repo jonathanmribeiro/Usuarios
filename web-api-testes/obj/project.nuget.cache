@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8lZQLRh7VHDzQGZLLEVUCLQQn6nfldwonRuGEmQMvNAagswfnE/kMi7nqdGsWDTzhnrOQRVSYpmBjDX0Q9moNQ==",
+  "dgSpecHash": "pNSjSjRb3L5ITbD22c3u34nx3jV2l7EKkcQ63jS3dp1ubtS9K/B6wauFn+sLlZmA5YJTraDF27mijVqdGCBJ1A==",
   "success": true,
   "projectFilePath": "C:\\Projetos\\Usuarios\\web-api-testes\\web-api-testes.csproj",
   "expectedPackageFiles": [
@@ -147,8 +147,7 @@
     "C:\\Users\\jonat\\.nuget\\packages\\xunit.assert\\2.4.1\\xunit.assert.2.4.1.nupkg.sha512",
     "C:\\Users\\jonat\\.nuget\\packages\\xunit.core\\2.4.1\\xunit.core.2.4.1.nupkg.sha512",
     "C:\\Users\\jonat\\.nuget\\packages\\xunit.extensibility.core\\2.4.1\\xunit.extensibility.core.2.4.1.nupkg.sha512",
-    "C:\\Users\\jonat\\.nuget\\packages\\xunit.extensibility.execution\\2.4.1\\xunit.extensibility.execution.2.4.1.nupkg.sha512",
-    "C:\\Users\\jonat\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.3\\xunit.runner.visualstudio.2.4.3.nupkg.sha512"
+    "C:\\Users\\jonat\\.nuget\\packages\\xunit.extensibility.execution\\2.4.1\\xunit.extensibility.execution.2.4.1.nupkg.sha512"
   ],
   "logs": []
 }
