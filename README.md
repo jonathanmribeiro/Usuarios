@@ -28,7 +28,7 @@ GET {{url}}/api/acesso/usuario
 
 POST {{url}}/api/acesso/usuario
 
-### Authorization
+# Authorization
 A autorização de acesso foi construída utilizado o JWT (JSON Web Token), essa validação consiste na geração de um Token que contém informações de acesso e previne o acesso a rotas não autorizadas.
 
 Para isso são utilizados 3 **Roles** de acesso, *1 - Diretor*, *2 - Gerente* e *3 - Colaborador*.
@@ -45,7 +45,7 @@ O método **Remover usuario** permite acesso pelo role 1 - Diretor.
 
 Para os métodos que requerem autorização é necessário incluir como *Bearer Token* o Token retornado fazer login
 
-### JSON - Usuário
+# JSON - Usuário
 Para criação do usuário em banco e manipulação, o seguinte JSON pode ser utilizado
 
 `{
@@ -57,8 +57,8 @@ Para criação do usuário em banco e manipulação, o seguinte JSON pode ser ut
   "email": "testemail@outlook.com"
 }`
 
-### Banco de dados
+# Banco de dados
 Para o banco de dados foi utilizado o Azure Cloud da Microsoft, afim de manter o projeto mais simples de executar e sem necessidade de preparar um ambiente com BD.
 
-### Testes unitários
+# Testes unitários
 Os testes unitários encontram-se no projeto TestesUnitarios na mesma solution. Foram escritos usando *xUnit*
